@@ -67,13 +67,17 @@ class factory_Calculator
 			q.pop();
 			return r;
 		};
-
-		Factory factory;
-		Base* create(char** operation);
 		bool isDouble(const std::string& s) {
-			try{std::stod(s); return true;  }
+			try{
+				size_t sz;
+				std::stod(s);
+				stod(s, &sz); 	// sz contains the last position of the double in the string
+				return s.length() == sz;
+			}
 			catch (...)		 {return false; }
 		}
+
+		Factory factory;
 	public:
 		Base* parse(char** operations, int qty);
 };
