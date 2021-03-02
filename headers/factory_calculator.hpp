@@ -70,8 +70,7 @@ class factory_Calculator
 		bool isDouble(const std::string& s) {
 			try{
 				size_t sz;
-				std::stod(s);
-				stod(s, &sz); 	// sz contains the last position of the double in the string
+				std::stod(s, &sz); 	// sz contains the last position of the double in the string
 				return s.length() == sz;
 			}
 			catch (...)		 {return false; }
