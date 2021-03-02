@@ -30,7 +30,7 @@ class Factory /*: public abstractFactory */ {
 	public:
 		Base* create()  			{ return new Rand();}
 		Base* create(double value)  { return new Op(value); }
-		Base* create(const std::string& comp, Base& x, Base& y) 
+		Base* create(const std::string& comp, Base* x, Base* y) 
 		{
 			/*
 			std::map<std::string, Base*> map_CreateFuncs = {
